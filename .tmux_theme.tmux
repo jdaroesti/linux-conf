@@ -22,7 +22,7 @@ main() {
   # Status bar (left)
   tmux set-option -g status-justify centre
   tmux set-option -g status-style "bg=${light_grey}"
-  tmux set-option -g status-left ' #S #{prefix_highlight}'
+  tmux set-option -g status-left ' #{prefix_highlight} #S '
   tmux set-option -g status-left-style "bg=${green},fg=${black}"
 
   # Prefix highlight
