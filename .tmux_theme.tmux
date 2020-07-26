@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Heavily inspired on sei40kr/tmux-onedark
+
 main() {
   local green='colour114'
   local white='colour255'
@@ -21,8 +22,16 @@ main() {
   # Status bar (left)
   tmux set-option -g status-justify centre
   tmux set-option -g status-style "bg=${light_grey}"
-  tmux set-option -g status-left ' #S '
+  tmux set-option -g status-left ' #S #{prefix_highlight}'
   tmux set-option -g status-left-style "bg=${green},fg=${black}"
+
+  # Prefix highlight
+  tmux set-option -g @prefix_highlight_show_copy_mode 'on'
+  tmux set-option -g @prefix_highlight_prefix_prompt 'Wait'
+  tmux set-option -g @prefix_highlight_copy_prompt 'Copy'
+  tmux set-option -g @prefix_highlight_fg ${black}
+  tmux set-option -g @prefix_highlight_bg ${green}
+  tmux set-option -g @prefix_highlight_copy_mode_attr "fg=${black},bg=${green}"
 
   # Status bar (right)
   tmux set-option -g status-right " CPU:#{cpu_percentage} #[bg=${dark_grey}] %m/%d %R "
