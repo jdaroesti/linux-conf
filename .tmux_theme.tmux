@@ -23,15 +23,15 @@ main() {
   tmux set-option -g status-justify centre
   tmux set-option -g status-style "bg=${light_grey}"
   tmux set-option -g status-left ' #{prefix_highlight} #S '
-  tmux set-option -g status-left-style "bg=${green},fg=${black}"
+  tmux set-option -g status-left-style "bg=${white},fg=${black}"
 
   # Prefix highlight
   tmux set-option -g @prefix_highlight_show_copy_mode 'on'
   tmux set-option -g @prefix_highlight_prefix_prompt 'Wait'
   tmux set-option -g @prefix_highlight_copy_prompt 'Copy'
+  tmux set-option -g @prefix_highlight_bg ${white}
   tmux set-option -g @prefix_highlight_fg ${black}
-  tmux set-option -g @prefix_highlight_bg ${green}
-  tmux set-option -g @prefix_highlight_copy_mode_attr "fg=${black},bg=${green}"
+  tmux set-option -g @prefix_highlight_copy_mode_attr "fg=${white},bg=${black}"
 
   # Status bar (right)
   tmux set-option -g status-right " CPU:#{cpu_percentage} #[bg=${dark_grey}] %m/%d %R "
@@ -41,7 +41,7 @@ main() {
   tmux set-window-option -g window-status-format ' #I:#W '
   tmux set-window-option -g window-status-style "bg=${dark_grey}"
   tmux set-window-option -g window-status-current-format ' #I:#W '
-  tmux set-window-option -g window-status-current-style "bg=${green},fg=${black}"
+  tmux set-window-option -g window-status-current-style "bg=${white},fg=${black}"
   tmux set-window-option -g window-status-separator ''
 }
 
